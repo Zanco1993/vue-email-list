@@ -18,12 +18,17 @@
             <h1>Elenco delle prime 10 mail</h1>
         </div>
 
-        <button @click="emailGenerator">Genera mail</button>
+        <button @click="emailGenerator(10)">Genera mail</button>
 
+        
+        <div v-if="listMail.length === 10">
+            <div v-for="(mail, i) in listMail" class="container-mail">
+                    <li>{{ mail }}</li>
 
-        <div v-for="mail in listMail" class="container-mail">
-            <li>{{ mail }}</li>
+            </div>
         </div>
+
+      
 
 
 

@@ -7,22 +7,20 @@ new Vue ({
     el: "#app",
     data: {
         listMail: [],
-        
     },
 
     methods: {
-      emailGenerator: function() {
-        for(i = 0;i < 10;i++) {
+      emailGenerator: function(num) {
+        for(i=0;i < num;i++){
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((email) => {
-                this.listMail.push(email.data.response)
+            this.listMail.push(email.data.response)
             })
-
-        }
-      },
+            }
+        },
+            
+        
+    }
 
       
-
-    },
-    
     
 })
